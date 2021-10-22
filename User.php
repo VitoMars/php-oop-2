@@ -34,6 +34,11 @@ class User
    {
       return $this->sconto;
    }
+
+   function insertCreditCard($_credit_card)
+   {
+      return $_credit_card;
+   }
 }
 
 $user1 = new User("Alessio", "Vietri", "alessio.vietri@gmail.com", "AlessioVietriLaBestia", "Via introvabile senza numero civico", "333-3456789", true);
@@ -41,5 +46,7 @@ $user2 = new User("Vito", "Marseglia", "vito95v@gmail.com", "cicciolina95", "Dov
 
 $user1->setSconto(true);
 $user2->setSconto(false);
+
+$user1->insertCreditCard($credit1);
 
 var_dump($user1, $user2);

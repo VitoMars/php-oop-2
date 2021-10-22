@@ -1,6 +1,8 @@
 <?php
 
-class Product
+require_once "Order.php";
+
+class Product extends Order
 {
    public $name;
    public $category;
