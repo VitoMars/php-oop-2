@@ -6,10 +6,10 @@ class User
    public $surname;
    public $email;
    public $password;
-   public $orders;
    public $address;
    public $phone;
    public $premium;
+   public $sconto = 0;
 
    function __construct($_name, $_surname, $_email, $_password, $_address, $_phone, $_premium)
    {
@@ -21,8 +21,26 @@ class User
       $this->phone = $_phone;
       $this->premium = $_premium;
    }
+
+
+   public function setSconto($_premium)
+   {
+      if ($_premium == true) {
+         $this->sconto = 25;
+      }
+      $this->getSconto();
+   }
+
+   public function getSconto()
+   {
+      return $this->sconto;
+   }
 }
 
 $user1 = new User("Alessio", "Vietri", "alessio.vietri@gmail.com", "AlessioVietriLaBestia", "Via introvabile senza numero civico", "333-3456789", true);
-$user2 = new User("Vito", "Marseglia", "vito95v@gmail.com", "cicciolina95", "Dove il signore ha perso le scarpe", "333-987654321", true);
+$user2 = new User("Vito", "Marseglia", "vito95v@gmail.com", "cicciolina95", "Dove il signore ha perso le scarpe", "333-987654321", false);
+
+$user1->setSconto(true);
+$user2->setSconto(false);
+
 var_dump($user1, $user2);
