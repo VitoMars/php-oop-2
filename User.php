@@ -22,7 +22,6 @@ class User
       $this->premium = $_premium;
    }
 
-
    public function setSconto($_premium)
    {
       if ($_premium == true) {

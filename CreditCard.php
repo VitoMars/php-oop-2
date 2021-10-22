@@ -1,6 +1,6 @@
 <?php
 
-class CreditCard
+class CreditCard extends User
 {
    private $card_holder; //Intestatario
    private $number;
@@ -17,3 +17,7 @@ class CreditCard
       $this->circuit = $_circuit;
    }
 }
+
+$credit1 = new CreditCard("Vito Marseglia", "4033-1856-7313-4561", "06/22", 654, "Visa");
+
+var_dump($credit1);
